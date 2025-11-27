@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz sur le cerveau - Neurodon</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <!-- Logo en haut à gauche -->
+  <div class="logo">
+    <img src="LOGO_NEURODON_FRC.png" alt="Fondation pour la Recherche sur le Cerveau - Neurodon">
+  </div>
+
+  <div class="container">
+   
+    <main class="quiz-main">
+      
+      <h1 id="currentCategory" class="category-title">Nom rubrique</h1>
+      
+      <!-- Barre de progression --><div class="progress-bar">
+        <div class="fill" id="progressFill"></div>
+      </div>
+
+      
+      <div id="start" class="screen start">
+        <div class="question-box">
+          <h2>Première question ?</h2>
+          <div class="options" id="startOptions"></div>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn-secondary" disabled>Précédent</button>
+          <button class="btn-primary" onclick="startQuiz()">Suivant</button>
+        </div>
+      </div>
+
+      
+      <div id="quiz" class="screen quiz" style="display: none;">
+        <div class="question-box">
+          <h2 id="questionText">Première question ?</h2>
+          <div class="options" id="optionsContainer"></div>
+        </div>
+        <div class="nav-dots" id="navDots"></div>
+        <div class="nav-buttons">
+          <button class="btn-secondary" onclick="prev()">Précédent</button>
+          <button class="btn-primary" onclick="next()" id="nextBtn">Suivant</button>
+        </div>
+      </div>
+
+      
+      <div id="result" class="screen result" style="display: none;">
+        <div class="question-box">
+          <h2>Résultat final 🎉</h2>
+          <p id="scoreText"></p>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn-primary" onclick="location.reload()">Recommencer</button>
+        </div>
+      </div>
+    </main>
+
+   
+    <aside class="sidebar">
+      
+      <div class="info-box">
+        <h3>Le saviez-vous ?</h3>
+        <p id="funFact"></p>
+        <div class="carousel-dots">
+          <span class="dot"></span>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <nav class="categories">
+        <button class="category-btn active" onclick="selectCategory(0)">Nom rubrique 1</button>
+        <button class="category-btn" onclick="selectCategory(1)">Nom rubrique 1</button>
+        <button class="category-btn" onclick="selectCategory(2)">Nom rubrique 1</button>
+        <button class="category-btn" onclick="selectCategory(3)">Nom rubrique 1</button>
+        <button class="category-btn" onclick="selectCategory(4)">Nom rubrique 1</button>
+      </nav>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="empreinte">
+      <img src="EMPREINTE_VERT-MOUSSE.png" alt="">
+    </div>
+  </footer>
+
+  <script src="src/main.js"></script>
+</body>
+</html>
